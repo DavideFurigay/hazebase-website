@@ -22,7 +22,7 @@ article {
   margin-left: 10%;
   margin-right: 10%;
   width: 80%;
-  height: 900px;
+  min-height: 900px;
   background-color: #ffffff;
 }
 
@@ -54,4 +54,34 @@ section:after {
 .topnav a.active {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
+}
+
+.h1_article {
+
+}
+
+.h1_home {
+  text-align: center;
+}
+
+.p_article {
+  max-width: 70%;
+}
+
+.p_home {
+  text-align: center;
+  max-width: 80%;
+  margin:0% 10% 10% 10%;
+}
+
+.p_info {
+  margin:0%;
+}
+
+.img_home {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  width: 30%;
 }
