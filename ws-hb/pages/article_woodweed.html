@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../style.css">
+    <script src="../script.js"></script>
   </head>
   <body>
     <header>
@@ -109,11 +110,18 @@
       </p><br>
 
       <h2 id="woodweed5" class="h1_article">Comments</h2>
-        <div class="comment">
-          <textarea id="title" type="text "rows="2" cols="4" onkeyup="Allow()" placeholder="Let us know your thoughts, bro......"></textarea>
-          <input type="submit" value="Post" onclick="insert()" style="width:20px;" /></form>
-        </div>
-        <div id="display"></div>
+        <form id="form" action="javascript:void('');" class="add_comment">
+          <label>Name
+            <input id="name" type="string" name="name">
+          </label><br>
+          <label>Email
+            <input id="email" type="string" name="email">
+          </label><br>
+          <label>Comment
+           <textarea id="comment" name="comment"></textarea>
+          </label>
+          <input type="submit" value="Add Comment">
+        </form>
     </article>
   </body>
 </html>
