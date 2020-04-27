@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Register</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+  </head>
+  <body>
+    <header>
+      <div class="topnav">
+        <a href="../index.html">Home</a>
+        <a href="pages.html">Articles</a>
+        <a href="user.html">Account</a>
+      </div>
+    </header>
+    <article class="log">
+      <h1 class="h1_article">Register</h1>
+      <form action="/action_register.php">
+        <div class="container">
+          <p>Enter your details to sign up!</p>
+          <hr>
+          <label for="email"><b>Username</b></label>
+          <input type="text" placeholder="What do we call you?" name="username" required><br>
+      
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Self explanitory" name="email" required><br>
+      
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="It's a secret to everyone" name="psw" required><br>
+      
+          <label for="psw-repeat"><b>Repeat Password</b></label>
+          <input type="password" placeholder="Deja vu" name="psw-repeat" required><br>
+          <hr>
+          <p>Not a newbie? <a href="login.html">Log in</a>.</p>
+          <button type="submit" class="registerbtn">Register</button>
+        </div>
+      </form>
+    </article>
+  </body>
+</html>
