@@ -1,4 +1,4 @@
-//Comments
+//Test Comment Script -> Code from W3Schools
 $(function(){
     $("#form").submit(function(e){
         // Create data object
@@ -19,7 +19,7 @@ $(function(){
     });
 });
 
-//Live Search
+//Live Search -> Code from W3Schools
 function showResult(str) {
     if (str.length==0) {
       document.getElementById("livesearch").innerHTML="";

@@ -8,11 +8,6 @@
   </head>
   <body>
     <header>
-      <div class="topnav">
-        <a href="../index.html">Home</a>
-        <a href="pages.html">Articles</a>
-        <a href="user.html">Account</a>
-      </div>
     </header>
     <article class="log">
       <h1 class="h1_article">Register</h1>
@@ -20,18 +15,20 @@
         <div class="container">
           <p>Enter your details to sign up!</p>
           <hr>
+          <!--Ask for username-->
           <label for="username"><b>Username</b></label>
           <input type="text" placeholder="What do we call you?" name="username" required><br>
-      
+          <!--Ask for email-->
           <label for="email"><b>Email</b></label>
           <input type="text" placeholder="Self explanitory" name="email" required><br>
-      
+          <!--Ask for password-->
           <label for="psw"><b>Password</b></label>
           <input type="password" placeholder="It's a secret to everyone" name="psw" required><br>
-      
+          <!--Ask to repeat password-->
           <label for="psw-repeat"><b>Repeat Password</b></label>
           <input type="password" placeholder="Deja vu" name="psw-repeat" required><br>
           <hr>
+          <!--Send to login screen-->
           <p>Not a newbie? <a href="login.html">Log in</a>.</p>
           <button type="submit" class="registerbtn">Register</button>
         </div>
