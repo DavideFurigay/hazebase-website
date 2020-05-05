@@ -1,6 +1,6 @@
 <?php 
 session_start();
-$pdo = new PDO('mysql:host=localhost;dbname=test', 'root', '');
+$pdo = new PDO('mysql:host=localhost;dbname=hazebase', 'haze', 'HB-thc');
 ?>
 <!DOCTYPE html> 
 <html> 
@@ -15,8 +15,9 @@ $showFormular = true; //Variable ob das Registrierungsformular anezeigt werden s
 if(isset($_GET['register'])) {
     $error = false;
     $email = $_POST['email'];
-    $passwort = $_POST['passwort'];
-    $passwort2 = $_POST['passwort2'];
+	$username = $_POST['username'];
+    $passwort = $_POST['password'];
+    $passwort2 = $_POST['password2'];
   
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo 'Bitte eine gültige E-Mail-Adresse eingeben<br>';
@@ -33,8 +34,8 @@ if(isset($_GET['register'])) {
     
     //Überprüfe, dass die E-Mail-Adresse noch nicht registriert wurde
     if(!$error) { 
-        $statement = $pdo->prepare("SELECT * FROM users WHERE email = :email");
-        $result = $statement->execute(array('email' => $email));
+        $statement = $pdo->prepare("SELECT * FROM Benutzer WHERE username = :username AND email = :email");
+        $result = $statement->execute(array('username' => $username, 'email' => $email));
         $user = $statement->fetch();
         
         if($user !== false) {
@@ -47,11 +48,12 @@ if(isset($_GET['register'])) {
     if(!$error) {    
         $passwort_hash = password_hash($passwort, PASSWORD_DEFAULT);
         
-        $statement = $pdo->prepare("INSERT INTO users (email, passwort) VALUES (:email, :passwort)");
-        $result = $statement->execute(array('email' => $email, 'passwort' => $passwort_hash));
+        $statement = $pdo->prepare("INSERT INTO Benutzer (Benutzername, Passwort, Email) VALUES (:username, :passwort, :email)");
+        $result = $statement->execute(array('username' => $username, 'passwort' => $passwort_hash, 'email' => $email));
         
         if($result) {        
-            echo 'Du wurdest erfolgreich registriert. <a href="login.php">Zum Login</a>';
+            header('Location: /pages/login.html');
+			die('Login erfolgreich. Weiter zu <a href="/pages/login.html">Login</a>');
             $showFormular = false;
         } else {
             echo 'Beim Abspeichern ist leider ein Fehler aufgetreten<br>';
@@ -63,14 +65,17 @@ if($showFormular) {
 ?>
  
 <form action="?register=1" method="post">
+Benutzername:<br>
+<input type="text" size="40" maxlength="250" name="username"><br><br>
+
 E-Mail:<br>
 <input type="email" size="40" maxlength="250" name="email"><br><br>
  
 Dein Passwort:<br>
-<input type="password" size="40"  maxlength="250" name="passwort"><br>
+<input type="password" size="40"  maxlength="250" name="password"><br>
  
 Passwort wiederholen:<br>
-<input type="password" size="40" maxlength="250" name="passwort2"><br><br>
+<input type="password" size="40" maxlength="250" name="password2"><br><br>
  
 <input type="submit" value="Abschicken">
 </form>

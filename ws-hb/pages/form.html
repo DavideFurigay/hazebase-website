@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Dave's World 3.0</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header>
+  <h2>Dave's World 3.0</h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <li><a href="../index.html">Home sweet home</a></li>
+      <li><a href="./why.html">Why am I here?</a></li>
+      <li><a href="./what.html">What is love? </a></li>
+      <li><a href="#" style="font-weight: bold">Sell your soul to me</a></li>
+    </ul>
+  </nav>
+  
+  <article>
+    <form action="/action_page.php">
+      <label for="name">Name</label><br>
+      <input type="text" id="name" name="name" value="Who are you?"><br>
+      <label for="number">Number:</label><br>
+      <input type="text" id="number" name="number" value="Gimme them digets"><br>
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" name="password" value="It's a secret to everyone!"><br>
+      <br>
+      <label for="comment">Comment:</label><br>
+      <textarea id="comment" name="comment" form="usrform" rows="5" cols="40">Let me know your thoughts! If I don't like them, you'll get deleted</textarea><br>
+      <br>
+      <input type="radio" id="public" name="public" value="public">
+      <label for="public">Public</label><br>
+      <input type="radio" id="schoolIntern" name="schoolIntern" value="schoolIntern">
+      <label for="schoolIntern">School Internal</label><br>
+      <input type="radio" id="class" name="class" value="class">
+      <label for="classr">Class</label><br>
+      <input type="radio" id="private" name="private" value="private" checked>
+      <label for="private" >Private</label><br>
+      <br>
+      <label for="checkbox">Visible to:</label><br>
+      <input type="checkbox" id="bi17a" name="bi17a" value="bi17a">
+      <label for="bi17a">BI17A</label>
+      <input type="checkbox" id="bi17b" name="bi17b" value="bi17b">
+      <label for="bi17b">BI17B</label>
+      <input type="checkbox" id="bi17c" name="bi17c" value="bi17c">
+      <label for="bi17c">BI17C</label>
+      <input type="checkbox" id="ap17a" name="ap17a" value="ap17a">
+      <label for="ap17a">AP17A</label>
+      <input type="checkbox" id="st17a" name="st17a" value="st17a">
+      <label for="st17a">ST17A</label><br>
+      <br>
+      <label for="classesList">Written by:</label>
+      <select id="classesList">
+        <option value="bi17a">BI17A</option>
+        <option value="bi17b">BI17B</option>
+        <option value="bi17c">BI17C</option>
+        <option value="ap17a">AP17A</option>
+        <option value="st17a">ST17A</option>
+      </select><br>
+      <br>
+      <button type="button" onclick="displayFunction()">Click Me!</button>
+    </form> 
+    <p id="output"></p>
+  </article>
+</section>
+<script>
+  function displayFunction() {
+    var name = document.getElementById("name").value 
+    var number = document.getElementById("number").value 
+    var comment = document.getElementById("comment").value 
+    alert(name + "" + number + "" + comment)
+    document.getElementById("output").innerHTML= name + number + comment
+  }
+</script> 
+</body>
+</html>

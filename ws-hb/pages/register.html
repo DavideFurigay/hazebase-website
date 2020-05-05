@@ -11,7 +11,7 @@
     </header>
     <article class="log">
       <h1 class="h1_article">Register</h1>
-      <form action="/action_register.php">
+      <form method="POST" action="/php/register.php?register=1">
         <div class="container">
           <p>Enter your details to sign up!</p>
           <hr>
@@ -23,10 +23,10 @@
           <input type="text" placeholder="Self explanitory" name="email" required><br>
           <!--Ask for password-->
           <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="It's a secret to everyone" name="psw" required><br>
+          <input type="password" placeholder="It's a secret to everyone" name="password" required><br>
           <!--Ask to repeat password-->
           <label for="psw-repeat"><b>Repeat Password</b></label>
-          <input type="password" placeholder="Deja vu" name="psw-repeat" required><br>
+          <input type="password" placeholder="Deja vu" name="password2" required><br>
           <hr>
           <!--Send to login screen-->
           <p>Not a newbie? <a href="login.html">Log in</a>.</p>
