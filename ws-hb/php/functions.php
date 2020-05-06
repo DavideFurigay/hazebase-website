@@ -1,3 +1,4 @@
+<!--SOurce: https://codewithawa.com/posts/creating-a-comment-and-reply-system-php-and-mysql-->
 <?php 
 	// Set logged in user id: This is just a simulation of user login. We haven't implemented user log in
 	// But we will assume that when a user logs in, 

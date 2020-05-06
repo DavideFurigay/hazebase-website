@@ -43,6 +43,7 @@ function showResult(str) {
   }
 
   //COMMENTS SYSTEM
+  /*https://codewithawa.com/posts/creating-a-comment-and-reply-system-php-and-mysql*/
   $(document).ready(function(){
     // When user clicks on submit comment to add comment under post
     $(document).on('click', '#submit_comment', function(e) {

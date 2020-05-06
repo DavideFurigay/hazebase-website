@@ -1,3 +1,4 @@
+<!--SOurce: https://codewithawa.com/posts/creating-a-comment-and-reply-system-php-and-mysql-->
 <?php include('functions.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
