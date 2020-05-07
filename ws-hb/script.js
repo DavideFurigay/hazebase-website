@@ -41,6 +41,9 @@ function showResult(str) {
     xmlhttp.open("GET","livesearch.php?q="+str,true);
     xmlhttp.send();
   }
+  
+  //ARE YOU LOGGED IN??
+  
 
   //COMMENTS SYSTEM
   /*https://codewithawa.com/posts/creating-a-comment-and-reply-system-php-and-mysql*/

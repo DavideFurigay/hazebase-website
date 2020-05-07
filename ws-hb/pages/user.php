@@ -3,12 +3,11 @@
 session_start();
  
 // Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: ../index.html");
+if(!isset($_SESSION["userid"])){
+    header("location: /pages/login.html");
     exit;
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,22 +22,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       <div class="topnav">
         <a href="../index.html">Home</a>
         <a href="pages.html">Articles</a>
-        <a class="active" href="user.html">Account</a>
-		<a class="active" href="login.html">Login</a>
+        <a class="active"  id = 'AccountButton' href="user.php">Account</a>
+		<!--<a class="active" id = 'LoginButton' href="login.html" YOOO>Login</a>-->
       </div>
     </header>
     <article>
       <!--Username-->
       <h1 class="h1_article">Userpage</h1>
-      <p class="p_info">
-        This is your profile where you can keep track of all the articles you've commented on.
-      </p>
-      <!--List of commented articles-->
-      <ul>
-        <li><a href="article_woodweed.html">Wood Weed</a></li>
-      </ul>
 	  <form action="/pages/login.html">
-        <div class="container">
+        <!--div class="container">
           <button type="submit" class="registerbtn">Login</button>
         </div>
 	  </form>
@@ -46,7 +38,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <div class="container">
           <button type="submit" class="registerbtn">Register</button>
         </div>
-	  </form>
+	  </form>';-->
       <form action="/php/logout.php">
         <div class="container">
           <button type="submit" class="registerbtn">Log Out</button>
